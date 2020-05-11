@@ -1,0 +1,59 @@
+#Inventor V2.1 ascii
+
+
+TSceneKit {
+  fields [ SFFloat azimuth, SFFloat zenith, SFNode callbackList, SFNode cameraList, SFNode lightList, SFNode childList, SFNode transmissivity, SFNode topSeparator ]
+  childList 
+  NodeKitListPart {
+    childTypeNames [ "ShapeKit",
+        "SeparatorKit" ]
+    containerNode 
+    Group {
+
+      DEF SunNode TSeparatorKit {
+        fields [ SFEnum renderCaching, SFEnum boundingBoxCaching, SFEnum renderCulling, SFEnum pickCulling, SFNode callbackList, SFNode pickStyle, SFNode appearance, SFNode units, SFNode transform, SFNode texture2Transform, SFNode childList, SFNode tracker, SFNode topSeparator ]
+        transform 
+        Transform {
+          translation 0 0 0 =
+          DEF +0 TSceneTracker {
+            fields [ SFFloat m_azimuth, SFFloat m_zenith ]
+
+          }          . outputTranslation
+          rotation 0 0 1  0 =
+          USE +0          . outputRotation
+          scaleFactor 1 1 1 =
+          USE +0          . outputScaleFactor
+          scaleOrientation 0 0 1  0 =
+          USE +0          . outputScaleOrientation
+          center 0 0 0 =
+          USE +0          . outputCenter
+
+        }
+        childList 
+        NodeKitListPart {
+          containerTypeName "Separator"
+          childTypeNames [ "ShapeKit",
+              "SeparatorKit" ]
+          containerNode 
+          Separator {
+
+            DEF RootNode TSeparatorKit {
+              fields [ SFEnum renderCaching, SFEnum boundingBoxCaching, SFEnum renderCulling, SFEnum pickCulling, SFNode callbackList, SFNode pickStyle, SFNode appearance, SFNode units, SFNode transform, SFNode texture2Transform, SFNode childList, SFNode tracker, SFNode topSeparator ]
+              transform 
+              Transform {
+
+              }
+
+            }
+          }
+
+        }
+        tracker 
+        USE +0
+
+      }
+    }
+
+  }
+
+}
